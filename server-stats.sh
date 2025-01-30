@@ -22,7 +22,7 @@ echo "Free Memory: ${mem_free}MB ($mem_free_perc)"
 
 # Total disk usage (Free vs Used including percentage)
 echo -e "\n== Total disk usage =="
-df
+df -h / | awk 'NR==2 {print "Used: "$3", Free: "$4", Usage: "$5}'
 
 # Top 5 processes by CPU usage
 echo -e "\n== Top 5 Processes by CPU Usage =="
