@@ -1,0 +1,48 @@
+name: Deploy Index to GitHub Pages Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: HTML Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout new rep
+        uses: actions/checkout@v4
+
+      - name: Htmlhint install
+        run: npm install -g htmlhint 
+
+      - name: Index.html validate
+        run: htmlhint index.html
+
+  cd:
+    name: Deploy to github pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout new rep
+        uses: actions/checkout@v4
+
+      - name: Clone GitHub Pages
+        run: |
+          git clone https://github.com/everton/everton-tenorio.github.io.git deploy-rdmap
+          cd deploy-rdmap
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Copy new index.html
+        run: |
+          mkdir -p deploy-rdmap/indexdonovorepositorio
+          cp index.html deploy-rdmap/indexdonovorepositorio/index.html
+
+      - name: Commit and push
+        run: |
+          cd deploy-rdmap
+          git add .
+          git commit -m "chore(deploy): Auto update index.html"
+          git push https://${{ secrets.GH_PAT }}@github.com/everton-tenorio/everton-tenorio.github.io.git main
