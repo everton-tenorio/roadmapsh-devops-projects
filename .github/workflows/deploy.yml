@@ -37,7 +37,8 @@ jobs:
 
       - name: Copy new index.html
         run: |
-          cp index.html deploy-rdmap/roadmapsh-ga-project.html
+          mkdir -p deploy-rdmap/public
+          cp index.html deploy-rdmap/public/roadmapsh-ga-project.html
 
       - name: Commit and push
         run: |

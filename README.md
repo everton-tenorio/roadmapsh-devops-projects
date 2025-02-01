@@ -15,3 +15,6 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 
 ## Nginx Log Analyser
 [nginx-log-analyser.sh](https://roadmap.sh/projects/nginx-log-analyser)
+
+## GitHub Pages Deployment 
+[Learn the basics of CI/CD using GitHub Actions Workflow to deploy a static page on GitHub Pages.](https://everton-tenorio.github.io/roadmapsh-ga-project)
