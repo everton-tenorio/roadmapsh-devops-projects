@@ -18,4 +18,5 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 
 ## GitHub Pages Deployment 
 [Learn the basics of CI/CD using GitHub Actions Workflow to deploy a static page on GitHub Pages.](https://roadmap.sh/projects/github-actions-deployment-workflow)
-[Check here index.html in my Github Page.](https://everton-tenorio.github.io/roadmapsh-ga-project)
+
+- [Check here index.html in my Github Page.](https://everton-tenorio.github.io/roadmapsh-ga-project)

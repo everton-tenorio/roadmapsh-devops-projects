@@ -14,6 +14,17 @@ jobs:
       - name: Checkout new rep
         uses: actions/checkout@v4
 
+      - name: Check changes in index.html
+        id: check_changes
+        run: |
+          git diff --exit-code --quiet -- index.html || echo "index.html changed"
+      
+      - name: Get out if not changes in index.html
+        if: steps.check_changes.outcome == 'success'
+        run: |
+          echo "Nothing changes in index.html"
+          exit 0
+
       - name: Htmlhint install
         run: npm install -g htmlhint 
 
@@ -27,6 +38,17 @@ jobs:
     steps:
       - name: Checkout new rep
         uses: actions/checkout@v4
+
+      - name: Check changes in index.html
+        id: check_changes
+        run: |
+          git diff --exit-code --quiet -- index.html || echo "index.html changed"
+      
+      - name: Get out if not changes in index.html
+        if: steps.check_changes.outcome == 'success'
+        run: |
+          echo "Nothing changes in index.html"
+          exit 0
 
       - name: Clone GitHub Pages
         run: |
