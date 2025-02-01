@@ -30,7 +30,7 @@ jobs:
 
       - name: Clone GitHub Pages
         run: |
-          git clone https://github.com/everton/everton-tenorio.github.io.git deploy-rdmap
+          git clone https://github.com/everton-tenorio/everton-tenorio.github.io.git deploy-rdmap
           cd deploy-rdmap
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
