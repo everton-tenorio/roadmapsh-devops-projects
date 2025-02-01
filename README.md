@@ -12,3 +12,6 @@ sudo ./log-archive.sh /var/log
 ls log-dir/
 arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 ```
+
+## Nginx Log Analyser
+[nginx-log-analyser.sh](https://roadmap.sh/projects/nginx-log-analyser)
