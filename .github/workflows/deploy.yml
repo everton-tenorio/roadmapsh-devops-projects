@@ -45,4 +45,4 @@ jobs:
           cd deploy-rdmap
           git add .
           git commit -m "chore(deploy): Auto update index.html"
-          git push https://${{ secrets.GH_PAT }}@github.com/everton-tenorio/everton-tenorio.github.io.git gh-pages
+          git push https://${{ secrets.GH_PAT }}@github.com/everton-tenorio/everton-tenorio.github.io.git main
