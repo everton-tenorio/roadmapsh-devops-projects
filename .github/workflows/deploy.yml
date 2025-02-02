@@ -20,9 +20,8 @@ jobs:
           git diff --exit-code --quiet -- index.html || echo "index.html changed"
       
       - name: Get out if not changes in index.html
-        if: steps.check_changes.outcome == 'success'
+        if: steps.check_changes.outcome == ''
         run: |
-          echo "Nothing changes in index.html"
           exit 0
 
       - name: Htmlhint install
@@ -39,17 +38,6 @@ jobs:
       - name: Checkout new rep
         uses: actions/checkout@v4
 
-      - name: Check changes in index.html
-        id: check_changes
-        run: |
-          git diff --exit-code --quiet -- index.html || echo "index.html changed"
-      
-      - name: Get out if not changes in index.html
-        if: steps.check_changes.outcome == 'success'
-        run: |
-          echo "Nothing changes in index.html"
-          exit 0
-
       - name: Clone GitHub Pages
         run: |
           git clone https://github.com/everton-tenorio/everton-tenorio.github.io.git deploy-rdmap
@@ -63,8 +51,14 @@ jobs:
           cp index.html deploy-rdmap/public/roadmapsh-ga-project.html
 
       - name: Commit and push
+        id: cmt_push
         run: |
           cd deploy-rdmap
           git add .
           git commit -m "chore(deploy): Auto update index.html"
           git push https://${{ secrets.GH_PAT }}@github.com/everton-tenorio/everton-tenorio.github.io.git main
+
+      - name: Get out if not changes in index.html
+        if: steps.cmt_push.outcome == 'nothing to commit, working tree clean'
+        run: |
+          exit 0
