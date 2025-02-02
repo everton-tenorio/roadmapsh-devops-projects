@@ -14,16 +14,6 @@ jobs:
       - name: Checkout new rep
         uses: actions/checkout@v4
 
-      - name: Check changes in index.html
-        id: check_changes
-        run: |
-          git diff --exit-code --quiet -- index.html || echo "index.html changed"
-      
-      - name: Get out if not changes in index.html
-        if: steps.check_changes.outcome == ''
-        run: |
-          exit 0
-
       - name: Htmlhint install
         run: npm install -g htmlhint 
 
@@ -55,10 +45,8 @@ jobs:
         run: |
           cd deploy-rdmap
           git add .
-          git commit -m "chore(deploy): Auto update index.html"
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "chore(deploy): Auto update roadmapsh-ga-project.html"
           git push https://${{ secrets.GH_PAT }}@github.com/everton-tenorio/everton-tenorio.github.io.git main
-
-      - name: Get out if not changes in index.html
-        if: steps.cmt_push.outcome == 'nothing to commit, working tree clean'
-        run: |
-          exit 0
