@@ -24,3 +24,10 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 ## SSH Remote Server Setup 
 - [Check this task - SSH in AWS/EC2 + Fail2ban](./ssh-ec2/README.md)
 - [Project URL](https://roadmap.sh/projects/ssh-remote-server-setup)
+
+
+# Basic Dockerfile 
+- [Project URL](https://roadmap.sh/projects/basic-dockerfile)
+- [Dockerfile](./Dockerfile)
+
+`docker build -t container . && docker run --rm -e NAME="Everton" container`
