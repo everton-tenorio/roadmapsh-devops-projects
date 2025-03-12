@@ -20,3 +20,6 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 [Learn the basics of CI/CD using GitHub Actions Workflow to deploy a static page on GitHub Pages.](https://roadmap.sh/projects/github-actions-deployment-workflow)
 
 - [Check here index.html in my Github Page.](https://everton-tenorio.github.io/roadmapsh-ga-project)
+
+## SSH Remote Server Setup 
+- [Check this task - SSH in AWS/EC2 + Fail2ban](./ssh-ec2/README.md)
