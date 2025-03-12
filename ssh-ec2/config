@@ -1,0 +1,5 @@
+Host ec2
+  HostName <ip>
+  User <user>
+  Port <port>
+  IdentityFile ~/.ssh/<key>.pem  
