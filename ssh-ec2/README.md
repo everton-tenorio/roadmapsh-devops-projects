@@ -38,6 +38,10 @@ findtime = ...
 bantime = ...
 ```
 
+Verify: 
+- `fail2ban-client -t`
+- `sudo fail2ban-client status sshd`
+
 ```bash
 Status for the jail: sshd
 |- Filter
@@ -49,6 +53,3 @@ Status for the jail: sshd
    |- Total banned:	0
    `- Banned IP list:	
 ```
-Verify: 
-- `fail2ban-client -t`
-- `sudo fail2ban-client status sshd`
