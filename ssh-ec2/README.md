@@ -28,6 +28,17 @@ This way, instead of using ssh -i <key>.pem <user>@<ip>.
 As a bonus task, I used Fail2ban as a security layer to prevent brute force attacks on SSH. First, I made some changes to the main SSH daemon configuration file, where I disabled password access, set max retries to 3, and changed the port. Then, I created a configuration file for /etc/fail2ban/jail.d/ssh and added the following parameters:
 
 ```bash
+[sshd]
+enabled = true
+port = ...
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+findtime = ...
+bantime = ...
+```
+
+```bash
 Status for the jail: sshd
 |- Filter
 |  |- Currently failed:	1
