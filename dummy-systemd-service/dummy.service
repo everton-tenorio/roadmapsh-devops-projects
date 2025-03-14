@@ -1,0 +1,11 @@
+[Unit]
+Description=Dummy Service
+After=network.target
+
+[Service]
+ExecStart=/home/ubuntu/dummy.sh
+WorkingDirectory=/home/ubuntu
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
