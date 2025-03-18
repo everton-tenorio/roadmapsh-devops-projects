@@ -1,0 +1,3 @@
+staticservernginx.png
+README.md
+deploy.sh

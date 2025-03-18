@@ -39,3 +39,7 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 ## Basic DNS Setup 
 - [Task #1: I already had a custom domain in my GitHub Pages before this project: https://dev.evttenorio.com.](https://dev.evttenorio.com)
 - [Task #2: For this task, i used AWS.](https://roadmap.sh/projects/basic-dns)
+
+## Static Site Server 
+- [Project URL](https://roadmap.sh/projects/static-site-server)
+- [Project Explanation - README](./static_site/README)
