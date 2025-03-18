@@ -42,4 +42,4 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 
 ## Static Site Server 
 - [Project URL](https://roadmap.sh/projects/static-site-server)
-- [Project Explanation - README](./static_site/README)
+- [Project Explanation - README](./static_site/README.md)
