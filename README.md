@@ -44,6 +44,9 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 - [Project URL](https://roadmap.sh/projects/static-site-server)
 - [Project Explanation - README](./static_site/README.md)
 
+## Simple Monitoring
+- [Project URL](https://roadmap.sh/projects/simple-monitoring-dashboardhttps://roadmap.sh/projects/simple-monitoring-dashboard)
+- [Netdata Monitoring - Docker installation](./netdata/)
 
 ## EC2 Instance 
 - [Project URL](https://roadmap.sh/projects/ec2-instance)
