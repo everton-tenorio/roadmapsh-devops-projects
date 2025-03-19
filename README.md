@@ -43,3 +43,8 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 ## Static Site Server 
 - [Project URL](https://roadmap.sh/projects/static-site-server)
 - [Project Explanation - README](./static_site/README.md)
+
+
+## EC2 Instance 
+- [Project URL](https://roadmap.sh/projects/ec2-instance)
+- All the project tasks so far are being carried out using AWS EC2.
