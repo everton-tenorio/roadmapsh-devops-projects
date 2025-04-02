@@ -1,0 +1,42 @@
+- name: Configure Nginx for a static site
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Remove default nginx conf
+      file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+
+    - name: Create static_site.conf file
+      copy:
+        dest: /etc/nginx/conf.d/static_site.conf
+        content: |
+          server {
+              listen 80;
+              server_name _;
+
+              root /var/www/static_site;
+              index index.html;
+
+              location / {
+                  try_files $uri $uri/ /index.html;
+              }
+          }
+      notify: Restart Nginx
+
+    - name: Verify Nginx -> enabled / started
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted

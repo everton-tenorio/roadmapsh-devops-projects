@@ -1,0 +1,40 @@
+- name: Base configuration -> EC2 instancy
+  hosts: all
+  become: yes  # sudo
+  tasks:
+    - name: Update packages
+      apt:
+        update_cache: yes
+
+    # - name: Upgrade all packages
+      # apt:
+        # upgrade: dist
+
+    - name: Install basic packages for this task
+      apt:
+        name:
+          - fail2ban
+        state: present
+
+    - name: Configure maxretry in fail2ban with 2 value
+      lineinfile:
+        path: /etc/fail2ban/jail.d/ssh.conf
+        regexp: '^maxretry ='
+        line: 'maxretry = 2'
+        create: yes
+      notify: Restart fail2ban
+
+    - name: Verify sshd status fail2ban
+      command: fail2ban-client status sshd
+      register: fail2ban_status
+      changed_when: false
+
+    - name: Output fail2ban status
+      debug:
+        msg: "{{ fail2ban_status.stdout }}"
+
+  handlers:
+    - name: Restart fail2ban
+      service:
+        name: fail2ban
+        state: restarted

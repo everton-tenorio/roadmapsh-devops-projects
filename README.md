@@ -51,3 +51,7 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 ## EC2 Instance 
 - [Project URL](https://roadmap.sh/projects/ec2-instance)
 - All the project tasks so far are being carried out using AWS EC2.
+
+## Configuration Management
+- [Project URL](https://roadmap.sh/projects/configuration-management)
+- [Check ./ansible](./ansible)
