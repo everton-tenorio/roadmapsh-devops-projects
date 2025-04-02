@@ -16,7 +16,7 @@
           - fail2ban
         state: present
 
-    - name: Configure maxretry in fail2ban with 2 value
+    - name: Set the maxretry in fail2ban to 2.
       lineinfile:
         path: /etc/fail2ban/jail.d/ssh.conf
         regexp: '^maxretry ='
