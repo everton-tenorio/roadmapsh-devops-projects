@@ -56,7 +56,9 @@ arquive.log  logs_archive_20250130_20H22M46S.tar.gz
 - [Project URL](https://roadmap.sh/projects/configuration-management)
 - [Check ./ansible](./ansible)
 
-Three intermediate-level projects (Terraform, CI/CD, and Docker):
+
+### Three intermediate-level projects (Terraform, CI/CD, and Docker):
+
 1 - [IaC on AWS](https://roadmap.sh/projects/iac-digitalocean)
 2 - [Node.js Service Deployment](https://roadmap.sh/projects/nodejs-service-deployment)
 3 - [Dockerized Service](https://roadmap.sh/projects/dockerized-service-deployment)
